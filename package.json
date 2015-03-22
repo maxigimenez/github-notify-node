@@ -1,6 +1,6 @@
 {
   "name": "github-notity-node",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "List open pull requests on repositories, check which one is assigned to you.",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,8 @@
     "cli-table": "^0.3.1",
     "colors": "^1.0.3",
     "commander": "^2.7.1",
-    "github": "^0.2.3"
+    "github": "^0.2.3",
+    "node-persist": "0.0.3"
   },
   "bin": {
     "gitlist": "index.js"
