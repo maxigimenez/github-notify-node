@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var program = require('commander'),
     Table = require('cli-table'),
     async = require('async'),
