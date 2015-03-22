@@ -2,8 +2,10 @@
 
 ## Install
 
+This will install the bin as `gitlist`
+
 ```
-npm install -g gitlist
+npm install -g github-notity-node
 ```
 
 ## Usage
