@@ -1,7 +1,7 @@
 {
   "name": "github-notity-node",
   "version": "1.0.0",
-  "description": "Open pull requests on repositories list, check which one is assing to you.",
+  "description": "List open pull requests on repositories, check which one is assigned to you.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
