@@ -4,10 +4,8 @@ var program = require('commander'),
     Table = require('cli-table'),
     async = require('async'),
     Github = require('github'),
-    storage = require('node-persist'),
-    colors = require('colors');
-
-storage.initSync();
+    colors = require('colors'),
+    manageToken = require('./manage.token');
 
 program
     .version('0.0.1')
@@ -18,23 +16,28 @@ program
     .parse(process.argv);
 
 if(program.token){
-    storage.setItem('token', program.token).then(function(){
-        console.log(colors.green('The token has been saved.'));
-        process.exit(0);
+    manageToken.create(program.token, function(err){
+        if(!err){
+            console.log(colors.green('The token has been saved.'));
+            process.exit(0);
+        } else {
+            console.log(colors.red(err));
+            process.exit(1);
+        }
     });
 } else if (program.user && program.repository) {
     var github = new Github({
         version: '3.0.0'
     });
 
-    if(!storage.getItem('token')){
+    if(!manageToken.exists()){
         console.log(colors.red('Please set the Github token before.'));
         process.exit(1);
     }
 
     github.authenticate({
         type: 'token',
-        token: storage.getItem('token') || ''
+        token: manageToken.get()
     });
 
     var table = new Table({ 
