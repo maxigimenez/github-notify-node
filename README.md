@@ -1,4 +1,6 @@
-# Github list open pull requests
+# Github list
+
+Fetching all the pull requests open from an specifc user and repository.
 
 ## Install
 
@@ -18,7 +20,7 @@ First generate a new token [follow this instructions](https://help.github.com/ar
 gitlist -t TOKEN
 ```
 
-**Note: this will be saved in yout `~/.ssh` folder in a file called `config.gitlist`**
+*Note: this will be saved in your `~/.ssh` folder with a file called `config.gitlist`*
 
 ### Feching open pull requests
 
